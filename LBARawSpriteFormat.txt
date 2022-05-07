@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------
+                    L I T T L E   B I G   A D V E N T U R E   2
+                               LBA Raw Sprite Format
+                                    Revision: 2
+
+Author:   Alexandre Fontoura [alexfont]
+Email:    alexandrefontoura@oninetspeed.pt
+
+Last Modification: 01.05.2007
+
+
+[#] [ INFORMATION ] ------------------------------------------------------------
+
+This document describes the format in which the LBA2\Twinsen Odyssey Raw Sprite
+are stored in. I used this information in the generation of my screen viewer.
+If you find any errors in this document please email me the details, also if you
+find new stuff please notify me. This information is provided AS IS.
+
+
+[#] [ FORMAT ] -----------------------------------------------------------------
+
+00:    byte   Always value 8
+01..03:   unused 
+04:    s16    File size
+06..07:   unused
+08:    byte   Spriraw width.
+09:    byte   Spriraw height.
+10:       unused
+11:       unused
+
+All bytes in the image files are colours index. (1 colour is made with 3 palette bytes - See palette format for more information)
+
+The data start with lines in the offset 12. It repeats as many times as the height of image is.
+
+[line]
+
+The next data describes columns of specified line. It repeats as many times as the width of image is.
+
+[column]
+
+00:    byte   Colour index.
+
+[/column]
+
+[/line]
+

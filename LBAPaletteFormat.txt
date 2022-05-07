@@ -1,0 +1,32 @@
+--------------------------------------------------------------------------------
+                    L I T T L E   B I G   A D V E N T U R E   1 & 2
+                                 LBA Palette Format
+                                    version 0.01
+
+Author:   Alexandre Fontoura [alexfont]
+Email:    alexandrefontoura@oninetspeed.pt
+
+Last Modification: 14.09.2004
+
+
+[#] [ INFORMATION ] ------------------------------------------------------------
+
+This document describes the format in which the LBA1\Relentless and LBA2\Twinsen
+Odyssey palettes are stored in.
+If you find any errors in this document please email me the details, also if you
+find new stuff please notify me. This information is provided AS IS.
+
+
+[#] [ FORMAT ] -----------------------------------------------------------------
+
+The LBA1/2 palettes have 256 colours in RGB mode. Each colour have 3 components, Red(R), Green(G) and Blue(B).
+
+The data describes colours and it repeats 256 times.
+
+[colour]
+
+00:	byte	Red
+01:	byte	Green
+02:	byte	Blue
+
+[/colour]

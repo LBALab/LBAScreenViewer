@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------
+                    L I T T L E   B I G   A D V E N T U R E   1 & 2
+                                 LBA Images Format
+                                    version 0.01
+
+Author:   Alexandre Fontoura [alexfont]
+Email:    alexandrefontoura@oninetspeed.pt
+
+Last Modification: 14.09.2004
+
+
+[#] [ INFORMATION ] ------------------------------------------------------------
+
+This document describes the format in which the LBA1\Relentless and LBA2\Twinsen
+Odyssey images are stored in. I used this information in the generation of my 
+screen viewer.
+If you find any errors in this document please email me the details, also if you
+find new stuff please notify me. This information is provided AS IS.
+
+
+[#] [ FORMAT ] -----------------------------------------------------------------
+
+The LBA Image format is simply to load but have a particular thing that we have 
+to look at.
+If the image file size was:
+	[-] 307200 then the image size is 640x480
+	[-] 131884 then the image size is 512x256
+	[-] 65536: then the image size is 256x256
+
+Now that we know the image size we can get the image.
+All bytes in the image files are colours index. (1 colour is made with 3 palette bytes - See palette format for more information)
+
+The data start with lines. It repeats as many times as the height of image is.
+
+[line]
+
+The next data describes columns of specified line. It repeats as many times as the width of image is.
+
+[column]
+
+00:    byte   Colour index.
+
+[/column]
+
+[/line]
+
