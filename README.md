@@ -3,26 +3,6 @@ LBA Screen Viewer for Little Big Adventure 1 & 2 images and movies.
 * **Latest release:** v1.6 (08.08.2007)
 * **Author:** Alexandre Fontoura (@xesf) <alexandrefontoura@oninetspeed.pt>
 
-**Table of Contents:**
-
- # Open Images
- ## Open LBA Resource (*.hqr, *.ile)
- ## Load LBA Image (*.lim)
- ## Load LBA Brick/Sprite (*.brk, *.lsp)
- ## Load LBA2 Raw Sprite (*.lsr)
- ## Load LBA2 Saved Game Image (*.lba)
- # Convert BMPs to FLA Movies
- # Import
- # Export
- # View
- ## Full Screen
- ## Settings
- # Other things
- # Things TODO
- # Special Thanks
- ## Bug Reporting
-
-
 ## Open Images
 
 These are the menu sections to open LBA images:
