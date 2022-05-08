@@ -253,10 +253,10 @@ private:
 				#ifndef WITHOUT_BORLAND_COMPILER
 				AnsiString error = "Error: ";
 				error = error + filename;
-				error = error + " does not have the right size 1!\n";
+				error = error + " is not a valid BMP file!\n";
 				ShowMessage(error);
 				#else
-				printf("Error: %s does not have the right size 1!\n", filename);
+				printf("Error: %s is not a valid BMP file!\n", filename);
 				#endif //WITHOUT_BORLAND_COMPILER
 				free(Data);
 				return 1;
@@ -265,10 +265,10 @@ private:
 				#ifndef WITHOUT_BORLAND_COMPILER
 				AnsiString error = "Error: ";
 				error = error + filename;
-				error = error + " does not have the right size 2!\n";
+				error = error + " does not have the right size!\n";
 				ShowMessage(error);
 				#else
-				printf("Error: %s does not have the right size 2!\n", filename);
+				printf("Error: %s does not have the right size!\n", filename);
 				#endif //WITHOUT_BORLAND_COMPILER
 				free(Data);
 				return 1;
