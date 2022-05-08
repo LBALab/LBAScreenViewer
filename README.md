@@ -2,6 +2,13 @@ LBA Screen Viewer for Little Big Adventure 1 & 2 images and movies.
 
 * **Latest release:** v1.6 (08.08.2007)
 * **Author:** Alexandre Fontoura (@xesf) <alexandrefontoura@oninetspeed.pt>
+* **License:** GNU GPL version 2 or later
+* **Developed using:** C++ Builder 6 Professional
+* **Original MBN announcement thread:** https://forum.magicball.net/showthread.php?t=8411
+
+This program let you view all special images from LBA1 and LBA2 and save them in the
+most common image file formats. You can also view/create the LBA1 `fla` movies
+and export them as an animation image. Try and check all the other features ;)
 
 ## Open Images
 
