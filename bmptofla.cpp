@@ -25,9 +25,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifndef WITHOUT_BORLAND_COMPILER
 #include <vcl.h>
-
 #include "frmBMP2FLA.h"
+#endif //WITHOUT_BORLAND_COMPILER
 
 #define BMP_HEAD 54
 #define HEIGTH 200
@@ -79,26 +80,45 @@ private:
 	int prel;					//true if prel_arg allocated memory
 	Point2 Ptmp[WIDTH];			//temporary BMP line
 
+	void print_usage(char* program_name){
+		printf("bmp2fla - Convert a set of BMP images to an FLA movie to be played");
+		printf(" on the Little Big Planet 1 or 2 game engines.\n");
+		printf("\n");
+		printf("usage:\n");
+		printf("\t%s -n number_of_frames -p filename_prefix\n", program_name);
+		printf("\n");
+		printf("Optional parameters:\n");
+		printf("\t-s\tsample_number frequency repeat x y\n");
+		printf("\t-k\tlist_of_additional_keyframes\n");
+		printf("\t-f\tlist_of_frames_with_fadeouts\n");
+		printf("\n");
+	}
+
 	int prel_arg(int argc, char** argv){
 		int i, j;
 		int val;
-       frm_BMP2FLA->pgr_fla->Progress = 0;
-       frm_BMP2FLA->bt_playfla->Enabled = False;
+		#ifndef WITHOUT_BORLAND_COMPILER
+		frm_BMP2FLA->pgr_fla->Progress = 0;
+		frm_BMP2FLA->bt_playfla->Enabled = False;
+		#endif //WITHOUT_BORLAND_COMPILER
+
+		if (argc == 1){
+			print_usage(argv[0]);
+		    return 1;
+		}
+
 		for(i = 1; i < argc; ++i){
 			if (strcmp(argv[i], "-h") == 0){
-				printf("bmptofla -n number_of_frames -p filename_prefix\n");
-				printf("\n");
-				printf("Optional parameters:\n");
-				printf("-s sample_number frequency repeat x y\n");
-				printf("-k list_of_additional_keyframes\n");
-				printf("-f list_of_frames_with_fadeouts\n");
-				return 1;
+			    print_usage(argv[0]);
+			    return 1;
 			}else if (strcmp(argv[i], "-n") == 0){
 				++i;
 				if (i < argc){
 					prel = 1;
 					frames = atoi(argv[i]);
-                   frm_BMP2FLA->pgr_fla->MaxValue = frames;
+					#ifndef WITHOUT_BORLAND_COMPILER
+					frm_BMP2FLA->pgr_fla->MaxValue = frames;
+					#endif //WITHOUT_BORLAND_COMPILER
 					keyframes = (char*)malloc(frames * sizeof(char));
 					fadeouts = (char*)malloc(frames * sizeof(char));
 					Palette = (TPalette*)malloc(frames * sizeof(TPalette));
@@ -108,8 +128,11 @@ private:
 					}
 					keyframes[0] = 1;
 				}else{
-					//printf("Error: Number of frames expected!\n");
-                   ShowMessage("Error: Number of frames expected!\n");
+					#ifndef WITHOUT_BORLAND_COMPILER
+					ShowMessage("Error: Number of frames expected!\n");
+					#else
+					printf("Error: Number of frames expected!\n");
+					#endif //WITHOUT_BORLAND_COMPILER
 					return 1;
 				}
 			}else if (strcmp(argv[i], "-p") == 0){
@@ -117,8 +140,11 @@ private:
 				if (i < argc){
 					file = argv[i];
 				}else{
-					//printf("Error: BMP prefix expected!\n");
-                   ShowMessage("Error: BMP prefix expected!\n");
+					#ifndef WITHOUT_BORLAND_COMPILER
+					ShowMessage("Error: BMP prefix expected!\n");
+					#else
+					printf("Error: BMP prefix expected!\n");
+					#endif //WITHOUT_BORLAND_COMPILER
 					return 1;
 				}
 			}else if (strcmp(argv[i], "-s") == 0){
@@ -143,8 +169,11 @@ private:
 				if (i < argc){
 					FLAsample.y = atoi(argv[i]);
 				}else{
-					//printf("Error: Sample details expected!\n");
-                   ShowMessage("Error: Sample details expected!\n");
+					#ifndef WITHOUT_BORLAND_COMPILER
+					ShowMessage("Error: Sample details expected!\n");
+					#else
+					printf("Error: Sample details expected!\n");
+					#endif //WITHOUT_BORLAND_COMPILER
 					return 1;
 				}
 			}else if (strcmp(argv[i], "-k") == 0){
@@ -160,22 +189,31 @@ private:
 				}
 				--i;
 			}else{
-				//printf("Error: Unexpected parameter (%d)!\n", i);
-               AnsiString error = "Error: Unexpected parameter (";
-               error = error + i;
-               error = error + ")!\n";
-               ShowMessage(error);
+				#ifndef WITHOUT_BORLAND_COMPILER
+				AnsiString error = "Error: Unexpected parameter (";
+				error = error + i;
+				error = error + ")!\n";
+				ShowMessage(error);
+				#else
+				printf("Error: Unexpected parameter (%d)!\n", i);
+				#endif //WITHOUT_BORLAND_COMPILER
 				return 1;
 			}
 		}
 		if (!file){
-           //printf("Error: BMP prefix not specified!\n");
+			#ifndef WITHOUT_BORLAND_COMPILER
 			ShowMessage("Error: BMP prefix not specified!\n");
+			#else
+			printf("Error: BMP prefix not specified!\n");
+			#endif //WITHOUT_BORLAND_COMPILER
 			return 1;
 		}
 		if (!(frames > 0)){
-			//printf("Error: Number of frames not specified of specified incorecty!\n");
-           ShowMessage("Error: Number of frames not specified of specified incorecty!\n");
+			#ifndef WITHOUT_BORLAND_COMPILER
+			ShowMessage("Error: Number of frames not specified of specified incorecty!\n");
+			#else
+			printf("Error: Number of frames not specified of specified incorecty!\n");
+			#endif //WITHOUT_BORLAND_COMPILER
 			return 1;
 		}
 		return 0;
@@ -200,29 +238,38 @@ private:
 			sprintf(filename, "%s%d.bmp", file, i);
 			f = fopen(filename, "rb");
 			if (!f){
-				//printf("Error: %s does not exist!\n", filename);
-               AnsiString error = "Error: ";
-               error = error + filename;
-               error = error + " does not exist!\n";
-               ShowMessage(error);
+				#ifndef WITHOUT_BORLAND_COMPILER
+				AnsiString error = "Error: ";
+				error = error + filename;
+				error = error + " does not exist!\n";
+				ShowMessage(error);
+				#else
+				printf("Error: %s does not exist!\n", filename);
+				#endif //WITHOUT_BORLAND_COMPILER
 				free(Data);
 				return 1;
 			}
 			if (fread(stream, 1, BMP_HEAD, f) != BMP_HEAD){
-				//printf("Error: %s does not have the right size 1!\n", filename);
-               AnsiString error = "Error: ";
-               error = error + filename;
-               error = error + " does not have the right size 1!\n";
-               ShowMessage(error);
+				#ifndef WITHOUT_BORLAND_COMPILER
+				AnsiString error = "Error: ";
+				error = error + filename;
+				error = error + " does not have the right size 1!\n";
+				ShowMessage(error);
+				#else
+				printf("Error: %s does not have the right size 1!\n", filename);
+				#endif //WITHOUT_BORLAND_COMPILER
 				free(Data);
 				return 1;
 			}
 			if (fread(Data+i, 1, BMP_SIZE, f) != BMP_SIZE){
-				//printf("Error: %s does not have the right size 2!\n", filename);
-               AnsiString error = "Error: ";
-               error = error + filename;
-               error = error + " does not have the right size 2!\n";
-               ShowMessage(error);
+				#ifndef WITHOUT_BORLAND_COMPILER
+				AnsiString error = "Error: ";
+				error = error + filename;
+				error = error + " does not have the right size 2!\n";
+				ShowMessage(error);
+				#else
+				printf("Error: %s does not have the right size 2!\n", filename);
+				#endif //WITHOUT_BORLAND_COMPILER
 				free(Data);
 				return 1;
 			}
@@ -382,8 +429,11 @@ private:
 						sol.P[i].B = c;
 						i++;
 					}else{
-						//printf("Error: BMPs contain more than 256 diffrent colors!\n");
-                       ShowMessage("Error: BMPs contain more than 256 diffrent colors!\n");
+						#ifndef WITHOUT_BORLAND_COMPILER
+						ShowMessage("Error: BMPs contain more than 256 diffrent colors!\n");
+						#else
+						printf("Error: BMPs contain more than 256 diffrent colors!\n");
+						#endif //WITHOUT_BORLAND_COMPILER
 						return sol;
 					}
 				}
@@ -665,7 +715,9 @@ private:
 		WriteHeader(f);
 		for(i = 0; i < frames; ++i){
 			WriteFrame(f, i);
-           frm_BMP2FLA->pgr_fla->Progress++;
+			#ifndef WITHOUT_BORLAND_COMPILER
+			frm_BMP2FLA->pgr_fla->Progress++;
+			#endif //WITHOUT_BORLAND_COMPILER
 		}
 		fclose(f);
 	}
@@ -687,6 +739,16 @@ public:
 		CalcPalette();
 		WriteFLA();
 		FreeMem();
-       frm_BMP2FLA->bt_playfla->Enabled = True;
+		#ifndef WITHOUT_BORLAND_COMPILER
+		frm_BMP2FLA->bt_playfla->Enabled = True;
+		#endif //WITHOUT_BORLAND_COMPILER
 	}
 };
+
+#ifdef WITHOUT_BORLAND_COMPILER
+int main(int argc, char** argv){
+	BMPtoFLA* b2f = new BMPtoFLA(argc, argv);
+	free(b2f);
+	return 0;
+}
+#endif
