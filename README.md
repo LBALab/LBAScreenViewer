@@ -153,6 +153,14 @@ program will search for this temporary palette and will open the image using it.
  * Feature to open the LBA2 SMK movies. (help is welcome)
 
 
+## Technical Specs
+You can find some technical specification files under the `tech-specs` directory.
+
+- [tech-specs/LBAImageFormat.txt](tech-specs/LBAImageFormat.txt)
+- [tech-specs/LBAPaletteFormat.txt](tech-specs/LBAPaletteFormat.txt)
+- [tech-specs/LBARawSpriteFormat.txt](tech-specs/LBARawSpriteFormat.txt)
+
+
 ## Special Thanks
 
  * Kazimierz Król (Zink). He helped me so much that I can't even describe.
