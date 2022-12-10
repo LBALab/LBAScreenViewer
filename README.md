@@ -1,6 +1,6 @@
 LBA Screen Viewer for Little Big Adventure 1 & 2 images and movies.
 
-* **Latest release:** v1.6 (08.08.2007)
+* **Latest release:** v1.7 (12.08.2007)
 * **Author:** Alexandre Fontoura (@xesf)
 * **License:** GNU GPL version 2 or later
 * **Developed using:** C++ Builder 6 Professional
