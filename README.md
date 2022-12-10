@@ -1,7 +1,7 @@
 LBA Screen Viewer for Little Big Adventure 1 & 2 images and movies.
 
 * **Latest release:** v1.6 (08.08.2007)
-* **Author:** Alexandre Fontoura (@xesf) <alexandrefontoura@oninetspeed.pt>
+* **Author:** Alexandre Fontoura (@xesf)
 * **License:** GNU GPL version 2 or later
 * **Developed using:** C++ Builder 6 Professional
 * **Original MBN announcement thread:** https://forum.magicball.net/showthread.php?t=8411
@@ -151,7 +151,7 @@ program will search for this temporary palette and will open the image using it.
 
 ## Special Thanks
 
- * Kazimierz KrÛl (Zink). He helped me so much that I can't even describe.
+ * Kazimierz Kr√≥l (Zink). He helped me so much that I can't even describe.
  * Spatarel Dan Constantin (MGLC) for making the BMP to FLA converter and allowing me to
    integrate it in Screen Viewer.
  * Some ideas/codes taken from the opensource TwinEngine by Vicent Hamm (yaz0r).
@@ -163,6 +163,6 @@ program will search for this temporary palette and will open the image using it.
 ### Bug Reporting
 
  * Ido Beeri (ChaosFish)
- * Kazimierz KrÛl (Zink)
- * Jo„o de Camıes (OBrasilo)
+ * Kazimierz Kr√≥l (Zink)
+ * Jo√£o de Cam√µes (OBrasilo)
  * LBAWinOwns
