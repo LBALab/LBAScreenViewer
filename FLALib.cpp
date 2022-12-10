@@ -3,9 +3,8 @@
 Copyright (C) 2004-2007
 -------------------------------[ FLALiv.cpp ]--------------------------------
 
-Author: Alexandre Fontoura [alexfont]
+Author: Alexandre Fontoura [xesf]
 Begin : Sun Sep 12 2004
-Email : alexandrefontoura@oninetspeed.pt
 
 -------------------------------[ GNU License ]-------------------------------
 

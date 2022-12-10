@@ -3,9 +3,8 @@
 Copyright (C) 2004
 -------------------------------[ ImgLib.cpp ]--------------------------------
 
-Author: Alexandre Fontoura [alexfont]
+Author: Alexandre Fontoura [xesf]
 Begin : Sun Sep 12 2004
-Email : alexandrefontoura@oninetspeed.pt
 
 -------------------------------[ GNU License ]-------------------------------
 
@@ -81,7 +80,7 @@ int canOpen=0;
 __fastcall Tfrm_img::Tfrm_img(TComponent* Owner)
    : TForm(Owner)
 {
-   frm_img->Caption = frm_img->Caption + " v" + vnum + " by alexfont";
+   frm_img->Caption = frm_img->Caption + " v" + vnum + " by xesf";
    lb_version->Caption = lb_version->Caption + " " + vnum;
 
    pBitmap->PixelFormat = pf8bit;

@@ -3,11 +3,10 @@
 Copyright (C) 2004
 -------------------------------[ RoomLib.cpp ]-------------------------------
 
-Author: Alexandre Fontoura [alexfont]
+Author: Alexandre Fontoura [xesf]
 Begin : Thu Aug 26 2004
-Email : alexandrefontoura@oninetspeed.pt
 
-Original code in Delphi: Kazimierz Król [Zink]
+Original code in Delphi: Kazimierz Krï¿½l [Zink]
 
 -------------------------------[ GNU License ]-------------------------------
 

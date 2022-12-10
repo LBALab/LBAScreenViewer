@@ -3,8 +3,7 @@
                                  LBA Images Format
                                     version 0.01
 
-Author:   Alexandre Fontoura [alexfont]
-Email:    alexandrefontoura@oninetspeed.pt
+Author:   Alexandre Fontoura [xesf]
 
 Last Modification: 14.09.2004
 

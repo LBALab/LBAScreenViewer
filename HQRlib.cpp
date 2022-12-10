@@ -3,9 +3,8 @@
 Copyright (C) 2004
 -------------------------------[ HQRLib.cpp ]--------------------------------
 
-Author: Alexandre Fontoura [alexfont]
+Author: Alexandre Fontoura [xesf]
 Begin : Fri Aug 21 2004
-Email : alexandrefontoura@oninetspeed.pt
 
 -------------------------------[ GNU License ]-------------------------------
 

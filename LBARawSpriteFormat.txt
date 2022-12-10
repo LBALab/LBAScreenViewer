@@ -3,8 +3,7 @@
                                LBA Raw Sprite Format
                                     Revision: 2
 
-Author:   Alexandre Fontoura [alexfont]
-Email:    alexandrefontoura@oninetspeed.pt
+Author:   Alexandre Fontoura [xesf]
 
 Last Modification: 01.05.2007
 

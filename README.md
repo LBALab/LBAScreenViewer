@@ -10,6 +10,10 @@ This program let you view all special images from LBA1 and LBA2 and save them in
 most common image file formats. You can also view/create the LBA1 `fla` movies
 and export them as an animation image. Try and check all the other features ;)
 
+![images/screenviewer1.png](images/screenviewer1.jpg)
+
+![images/screenviewer2.png](images/screenviewer2.jpg)
+
 ## Open Images
 
 These are the menu sections to open LBA images:
